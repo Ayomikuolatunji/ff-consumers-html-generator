@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forkfacts consumer</title>
+  </head>
+  <body>
+    <main style="overflow: hidden;">
+      <div style="max-width: 100%;">
+        <textarea
+          placeholder="Paste your embed code here"
+          onchange="handleCodeChange()"
+          oninput="handleCodeChange()"
+          style="
+            width: 100%;
+            height: 200px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+          "
+        ></textarea>
+      </div>
+      <div
+        id="embed-container"
+        style="
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          margin-top: 100px;
+        "
+      ></div>
+    </main>
+
+    <script>
+      function handleCodeChange() {
+        const embedContainer = document.getElementById("embed-container");
+        const embedCode = document.querySelector("textarea").value;
+        embedContainer.innerHTML = embedCode;
+      }
+    </script>
+  </body>
+</html>
